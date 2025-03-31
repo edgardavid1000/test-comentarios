@@ -1,0 +1,11 @@
+baseURL = "/"
+languageCode = "es"
+title = "Sistema de Comentarios Networking"
+disableKinds = ["taxonomy", "term"]
+
+[params]
+  description = "Deja tus comentarios sobre nuestras herramientas de networking"
+  author = "Networking Professional"
+  mainImage = "https://cdn.pixabay.com/photo/2016/10/30/23/05/handshake-1784354_960_720.jpg"
+  favicon = "https://cdn.pixabay.com/photo/2016/12/18/13/45/download-1915753_960_720.png"
+  mainSiteURL = "https://test-indice.netlify.app"
