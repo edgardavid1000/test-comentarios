@@ -5,8 +5,18 @@
 [build.environment]
   HUGO_VERSION = "0.145.0"
 
+# Redirección para manejar correctamente páginas no encontradas
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
+  methods = ["GET", "HEAD"]
+
+# Evita que las páginas reales sean redirigidas
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+  force = false
   methods = ["GET", "HEAD"]
+  conditions = {Response = {status = 404}}
