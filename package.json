@@ -1,0 +1,14 @@
+{
+  "name": "comentarios-networking",
+  "version": "1.0.0",
+  "description": "Sistema de comentarios para herramientas de networking",
+  "main": "index.js",
+  "scripts": {
+    "build": "hugo --minify"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.24",
+    "postcss-cli": "^10.1.0"
+  }
+}
