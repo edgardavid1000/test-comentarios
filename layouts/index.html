@@ -1,0 +1,72 @@
+{{ define "main" }}
+<div class="profile">
+    <img src="{{ .Site.Params.mainImage }}" alt="Profile" class="profile-image">
+    <h1 class="profile-title">{{ .Site.Title }}</h1>
+    <p class="profile-description">{{ .Site.Params.description }}</p>
+</div>
+
+<div class="nav-links">
+    <a href="{{ .Site.Params.mainSiteURL }}" class="nav-link">Volver al sitio principal</a>
+</div>
+
+<div class="content-body">
+    {{ .Content }}
+</div>
+
+<!-- Formulario de Netlify -->
+<form name="comentarios" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" class="form-netlify" action="/gracias">
+    <!-- Campo oculto requerido por Netlify -->
+    <input type="hidden" name="form-name" value="comentarios" />
+
+    <!-- Campo Honeypot para engañar a los bots -->
+    <p class="hidden-field">
+        <label>No llenar si eres humano: <input name="bot-field" /></label>
+    </p>
+
+    <!-- Campos visibles del formulario -->
+    <p>
+        <label for="name">Tu Nombre:</label>
+        <input type="text" id="name" name="name" required />
+    </p>
+    <p>
+        <label for="email">Tu Email:</label>
+        <input type="email" id="email" name="email" required />
+    </p>
+    <p>
+        <label for="tool">Herramienta:</label>
+        <select id="tool" name="tool">
+            <option value="">--Selecciona una herramienta--</option>
+            <option value="ip">¿Cuál es mi IP?</option>
+            <option value="grafico">Test Gráfico</option>
+            <option value="reloj">Reloj Despertador</option>
+            <option value="hora">Hora Mundial</option>
+            <option value="dns">Delegación DNS</option>
+            <option value="velocidad">Medidor de Velocidad</option>
+            <option value="mac">Búsqueda MAC</option>
+            <option value="redes">Calculadora de Redes</option>
+            <option value="general">Comentario General</option>
+        </select>
+    </p>
+    <p>
+        <label for="rating">Valoración:</label>
+        <select name="rating" id="rating">
+            <option value="">--Elige una opción--</option>
+            <option value="5">Excelente</option>
+            <option value="4">Bueno</option>
+            <option value="3">Regular</option>
+            <option value="2">Malo</option>
+            <option value="1">Muy Malo</option>
+        </select>
+    </p>
+    <p>
+        <label for="message">Tu Comentario:</label>
+        <textarea id="message" name="message" required></textarea>
+    </p>
+
+    <!-- Botón de envío -->
+    <p>
+        <button type="submit">Enviar Comentario</button>
+    </p>
+</form>
+<!-- Fin del Formulario de Netlify -->
+{{ end }}
