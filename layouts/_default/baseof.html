@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+    <meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Description }}{{ end }}">
+    <link rel="icon" href="{{ .Site.Params.favicon }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --background-color: #f8fafc;
+            --text-color: #1e293b;
+            --card-background: #ffffff;
+            --input-border-color: #cbd5e1;
+            --input-focus-border-color: var(--primary-color);
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+            flex-grow: 1;
+        }
+
+        /* Estilos de Profile */
+        .profile {
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .profile-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            border: 3px solid var(--primary-color);
+        }
+
+        .profile-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-description {
+            font-size: 1rem;
+            color: #64748b;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Estilos de Contenido General */
+        .content-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .content-body h2 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+            color: var(--secondary-color);
+        }
+        .content-body p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .content-body a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .content-body a:hover {
+            text-decoration: underline;
+        }
+
+        /* Estilos del Formulario */
+        .form-netlify {
+            background-color: var(--card-background);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 2rem;
+        }
+        .form-netlify p {
+            margin-bottom: 1rem;
+        }
+        .form-netlify label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        .form-netlify input[type="text"],
+        .form-netlify input[type="email"],
+        .form-netlify textarea,
+        .form-netlify select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--input-border-color);
+            border-radius: 4px;
+            font-size: 1rem;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+        .form-netlify input[type="text"]:focus,
+        .form-netlify input[type="email"]:focus,
+        .form-netlify textarea:focus,
+        .form-netlify select:focus {
+            outline: none;
+            border-color: var(--input-focus-border-color);
+            box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+        }
+        .form-netlify textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        .form-netlify button[type="submit"] {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .form-netlify button[type="submit"]:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .hidden-field {
+            position: absolute;
+            left: -5000px;
+        }
+
+        /* Enlaces de navegación */
+        .nav-links {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .nav-link {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            margin: 0 0.5rem;
+            transition: background-color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* Estilos del Footer */
+        .footer {
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.875rem;
+            color: #64748b;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    {{ partial "header" . }}
+    <div class="container">
+        {{ block "main" . }}{{ end }}
+    </div>
+    {{ partial "footer" . }}
+</body>
+</html>
