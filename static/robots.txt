@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /dev/
+
+# Sitemap location
+Sitemap: https://test-comentarios.netlify.app/sitemap.xml
