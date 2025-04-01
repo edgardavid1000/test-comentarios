@@ -1,6 +1,6 @@
 {{ define "main" }}
 <div class="profile">
-    <img src="{{ .Site.Params.mainImage }}" alt="Profile" class="profile-image">
+    <img src="{{ .Site.Params.mainImage }}" alt="{{ .Site.Title }}" class="profile-image">
     <h1 class="profile-title">{{ .Site.Title }}</h1>
     <p class="profile-description">{{ .Site.Params.description }}</p>
 </div>
