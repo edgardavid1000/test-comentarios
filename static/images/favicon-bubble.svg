@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Burbuja de chat simple para el favicon -->
+  <path d="M448 128c0-35.3-28.7-64-64-64H128c-35.3 0-64 28.7-64 64v192c0 35.3 28.7 64 64 64h96l64 64 64-64h32c35.3 0 64-28.7 64-64V128z" fill="#2563eb" />
+  <!-- Tres puntos para denotar texto -->
+  <circle cx="176" cy="224" r="24" fill="white" />
+  <circle cx="256" cy="224" r="24" fill="white" />
+  <circle cx="336" cy="224" r="24" fill="white" />
+</svg>
